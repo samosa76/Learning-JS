@@ -1,12 +1,15 @@
+//create resource variable
 var gajiPokok = 0;
 var tunjangan = 0;
 const data = {
-    "golongan" : "A",
+    "golongan" : "C",
     "status" : "nikah"
 };
 
+//get golongan from data array
 const golongan = data.golongan;
 
+//handling gaji by golongan
 if(golongan == "A"){
     gajiPokok = 10000000;
     console.log("Gaji Pokok = 10.000.000");
@@ -18,9 +21,12 @@ if(golongan == "A"){
     console.log("Gaji Pokok = 5.000.000");
 }
 
+//get status from data array
 const statusTunjangan = data.status;
 
+//check if status nikah or not
 if (statusTunjangan == "nikah") {
+    //handling tunjangan by golongan
     if(golongan == "A"){
         tunjangan = 2000000;
         console.log("Tunjangan = 2.000.000");
@@ -33,5 +39,6 @@ if (statusTunjangan == "nikah") {
     }
 };
 
+//print total gaji 
 console.log(`Total : ${gajiPokok + tunjangan}`);
 
