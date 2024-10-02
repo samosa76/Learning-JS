@@ -10,6 +10,39 @@ const data = [
         "golongan": "B",
         "status": "belum",
     },
+    {
+        "golongan": "C",
+        "status": "nikah",
+    },
+    {
+        "golongan": "B",
+        "status": "belum",
+    },
+    {
+        "golongan": "C",
+        "status": "nikah",
+    },
+    {
+        "golongan": "B",
+        "status": "belum",
+    },
+    {
+        "golongan": "C",
+        "status": "nikah",
+    },
+    {
+        "golongan": "A",
+        "status": "belum",
+    },
+    {
+        "golongan": "A",
+        "status": "nikah",
+    },
+    {
+        "golongan": "A",
+        "status": "belum",
+    },
+    
 ];
 
 //using loop to get each object
@@ -42,7 +75,7 @@ for (let index = 0; index < data.length; index++) {
     else {
         tunjangan = 0;
     }
-    //Total Gaji
+    //Total Gaji using function
     total = totalGaji(gajiPokok, tunjangan);
 
     //print result for each data
@@ -55,6 +88,7 @@ for (let index = 0; index < data.length; index++) {
     
 }
 
+//logical function to sum all wages
 function totalGaji(_gaji, _tunjangan){
     total = _gaji + _tunjangan
     return total;
