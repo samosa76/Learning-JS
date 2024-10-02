@@ -72,12 +72,13 @@ Handling all data
 */
 
 function showAllData(_index, _golongan, _status, _gajiPokok, _tunjangan, _total) {
-    return `Data ${_index + 1}
-        Golongan = ${_golongan}
-        Status = ${_status}
-        Gaji Pokok = ${_gajiPokok}
-        Tunjangan = ${_tunjangan}
-        total = ${_total}`;
+    return `
+    Nama = Data ${_index + 1}
+    Golongan = ${_golongan}
+    Status = ${_status}
+    Gaji Pokok = ${_gajiPokok}
+    Tunjangan = ${_tunjangan}
+    total = ${_total}`;
 }
 //logical function to sum all wages
 function totalGaji(_gaji, _tunjangan) {
