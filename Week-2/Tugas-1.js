@@ -42,94 +42,74 @@ const data = [
         "golongan": "A",
         "status": "belum",
     },
-    
+
 ];
 
 //using loop to get each object
 for (let index = 0; index < data.length; index++) {
     //get golongan and status from array
-    var golongan = data[index].golongan;
-    var status = data[index].status;
+    var _golongan = data[index].golongan;
+    var _status = data[index].status;
 
-    //processing gaji by golongan
-    if (golongan == "A") {
-        gajiPokok = 10000000;
-    } else if (golongan == "B") {
-        gajiPokok = 8000000;
-    }
-    else {
-        gajiPokok = 5000000;
-    }
+    //processing gaji by golongan using function wages
+    gajiPokok = wages(_golongan);
 
-    //check if tunjangan
-    if (status == "nikah") {
-        if (golongan == "A") {
-            tunjangan = 2000000;
-        } else if (golongan == "B") {
-            tunjangan = 1500000;
-        }
-        else {
-            tunjangan = 1000000;
-        }
-    }
-    else {
-        tunjangan = 0;
-    }
+    //processing tunjangan by status and golongan using function tunjanganWages
+    tunjangan = tunjanganWages(_status, _golongan);
+
+
     //Total Gaji using function
     total = totalGaji(gajiPokok, tunjangan);
 
     //print result for each data
     console.log(`Data ${index + 1}
-        Golongan = ${golongan}
-        Status = ${status}
+        Golongan = ${_golongan}
+        Status = ${_status}
         Gaji Pokok = ${gajiPokok}
         Tunjangan = ${tunjangan}
         total = ${total}`);
-    
+
 }
 
+
+
+
 //logical function to sum all wages
-function totalGaji(_gaji, _tunjangan){
+function totalGaji(_gaji, _tunjangan) {
     total = _gaji + _tunjangan
     return total;
 }
 
-// console.log(data);
+//logical function to determine gaji by golongan
+//get paramater golongan and store in _golongan
+function wages(_golongan) {
+    //check golongan value
+    var _gajiPokok;
+    if (_golongan == "A") {
+        _gajiPokok = 10000000;
+    } else if (_golongan == "B") {
+        _gajiPokok = 8000000;
+    }
+    else {
+        _gajiPokok = 5000000;
+    }
+    //return result for gajiPokok value
+    return _gajiPokok;
+}
 
-
-//get data.length data array
-// const golongan = data.golongan;
-
-//handling gaji by golongan
-// if (golongan == "A") {
-//     gajiPokok = 10000000;
-//     console.log("Gaji Pokok = 10.000.000");
-// } else if (golongan == "B") {
-//     gajiPokok = 8000000;
-//     console.log("Gaji Pokok = 8.000.000");
-// } else {
-//     gajiPokok = 5000000;
-//     console.log("Gaji Pokok = 5.000.000");
-// }
-
-//get status from data array
-// const statusTunjangan = data.status;
-
-//check if status nikah or not
-// if (statusTunjangan == "nikah") {
-//handling tunjangan by golongan
-//     if (golongan == "A") {
-//         tunjangan = 2000000;
-//         console.log("Tunjangan = 2.000.000");
-//     } else if (golongan == "B") {
-//         tunjangan = 1500000;
-//         console.log("Tunjangan  = 1.500.000");
-//     } else {
-//         tunjangan = 1000000;
-//         console.log("Tunjangan = 1.000.000");
-//     }
-// };
-
-//print total gaji
-// console.log(`Total : ${gajiPokok + tunjangan}`);
-
+function tunjanganWages(_status, _golongan) {
+    var _gajiTunjangan;
+    if (_status == "nikah") {
+        if (_golongan == "A") {
+            _gajiTunjangan = 2000000;
+        } else if (_golongan == "B") {
+            _gajiTunjangan = 1500000;
+        }
+        else {
+            _gajiTunjangan = 1000000;
+        }
+    } else {
+        _gajiTunjangan = 0;
+    }
+    return _gajiTunjangan;
+}
