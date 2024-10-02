@@ -51,29 +51,34 @@ for (let index = 0; index < data.length; index++) {
     var _golongan = data[index].golongan;
     var _status = data[index].status;
 
-    //processing gaji by golongan using function wages
+    //get gaji by golongan using function wages
     gajiPokok = wages(_golongan);
 
-    //processing tunjangan by status and golongan using function tunjanganWages
+    //get tunjangan by status and golongan using function tunjanganWages
     tunjangan = tunjanganWages(_status, _golongan);
 
 
-    //Total Gaji using function
+    //get total gaji using function
     total = totalGaji(gajiPokok, tunjangan);
 
     //print result for each data
-    console.log(`Data ${index + 1}
-        Golongan = ${_golongan}
-        Status = ${_status}
-        Gaji Pokok = ${gajiPokok}
-        Tunjangan = ${tunjangan}
-        total = ${total}`);
+    console.log(showAllData(index,_golongan, _status, gajiPokok, tunjangan, total));
 
 }
 
 
+/*
+Handling all data 
+*/
 
-
+function showAllData(_index, _golongan, _status, _gajiPokok, _tunjangan, _total) {
+    return `Data ${_index + 1}
+        Golongan = ${_golongan}
+        Status = ${_status}
+        Gaji Pokok = ${_gajiPokok}
+        Tunjangan = ${_tunjangan}
+        total = ${_total}`;
+}
 //logical function to sum all wages
 function totalGaji(_gaji, _tunjangan) {
     total = _gaji + _tunjangan
