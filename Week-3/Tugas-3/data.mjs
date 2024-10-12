@@ -12,6 +12,30 @@ const users = [
         email : "osa@gamil.com"
     },
     {
+        nama : "Gus",
+        umur : "21",
+        alamat : "Jakarta",
+        email : "gus@gamil.com"
+    },
+    {
+        nama : "Abigail",
+        umur : "21",
+        alamat : "Satdew Valley",
+        email : "abgl@gamil.com"
+    },
+    {
+        nama : "Alex",
+        umur : "21",
+        alamat : "Stardew Valley",
+        email : "alex@gamil.com"
+    },
+    {
+        nama : "Pierre",
+        umur : "21",
+        alamat : "Jakarta",
+        email : "p.reee@gamil.com"
+    },
+    {
         nama : "Sara",
         umur : "21",
         alamat : "Jember",

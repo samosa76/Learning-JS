@@ -14,6 +14,9 @@ import users from "./data.mjs";
 //     }
 
 // }
+const defaultCount = users.length;
+var countIndex, countCreate, countDelete;
+
 const index = () => {
     users.map(user => {
         const { nama, umur, alamat, email } = user;
@@ -24,6 +27,7 @@ const index = () => {
         console.log("=====================================");
 
     });
+    
 }
 
 const create = () => {
@@ -41,6 +45,8 @@ const create = () => {
             email: "fatih@gamil.com",
         }
     );
+    countCreate = users.length;
+    
 }
 
 
@@ -50,6 +56,15 @@ const destroy = () => {
     // for (const user of users) {
     //     console.log(user);
     // }
+    countDelete = users.length;
 }
 
-export { index, create, destroy };
+const indexCount = () => {
+    console.log(`Jumlah awal data : ${defaultCount}`);
+    console.log(`Jumlah data setelah menghapus 1 data : ${countDelete}`);
+    console.log(`Jumlah data setelah create 2 data : ${countCreate}`);
+    
+    
+}
+
+export { index, create, destroy, indexCount };
