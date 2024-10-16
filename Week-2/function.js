@@ -4,5 +4,6 @@ function testJS(data1, data2){
 }
 
 console.log(testJS(10, 2));
+console.log("testing new ");
 
 
